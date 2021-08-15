@@ -9,7 +9,9 @@ export default class PurchaseInputForm extends Component {
             purchaseName: "",
             purchaseCost: 0,
             rewardPoints: 0, 
-            showResult: false
+            showResult: false,
+            uniqueId: 0,
+            rewardOutputs: []
         }
         this.setPurchaseInfo = this.setPurchaseInfo.bind(this);
         this.displayRewardComp = this.displayRewardComp.bind(this);
@@ -25,8 +27,13 @@ export default class PurchaseInputForm extends Component {
                         <input type="number" name="purchaseCost" value={this.state.purchaseCost} onChange={this.setPurchaseInfo}></input>
 
                         <button type="submit" onClick={this.displayRewardComp}>Submit</button> 
-                   
-                {this.state.showResult && <RewardForm rewardInfo={this.state}></RewardForm>}
+                {/* {this.state.showResult && 
+                    <div>
+                         <p>Name</p>
+                         <p>Cost</p>
+                         <p>Rewards</p>
+                    </div>} */}
+                {this.state.showResult && this.state.rewardOutputs.map(comp=>comp)}
             </div>
         )
     }
@@ -57,9 +64,21 @@ export default class PurchaseInputForm extends Component {
             let afterHundPurc = cost - 100;
             points = afterHundPurc*2 + 50;
         }
+        let locUniq = 0;
         this.setState({
             rewardPoints: points, 
             showResult: true
+        }, ()=>{
+            if(this.state.showResult === true){
+                locUniq ++;
+                console.log("*****reward before push", this.state.rewardOutputs);
+                this.state.rewardOutputs.push(<RewardForm key = {locUniq+this.state.purchaseName} rewardInfo={this.state}/>)
+                console.log("*****reward after push",this.state.rewardOutputs);
+                this.setState({
+                    rewardOutputs: this.state.rewardOutputs
+                })
+                console.log("*****reward after setState",this.state.rewardOutputs);
+            }
         })
         console.log("these are the rewardPoints", points);
     }
