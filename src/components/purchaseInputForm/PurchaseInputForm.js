@@ -1,5 +1,5 @@
 import { Component } from "react";
-import RewardForm from "../rewardForm/RewardForm";
+import RewardForm from "../RewardForm/RewardForm";
 import "../purchaseInputForm/PurchaseInputForm.css";
 
 export default class PurchaseInputForm extends Component {

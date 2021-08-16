@@ -1,5 +1,5 @@
 import { Component } from "react";
-import "../rewardForm/RewardForm.css";
+import "./RewardForm.css";
 
 export default class RewardForm extends Component{
     constructor(props){
