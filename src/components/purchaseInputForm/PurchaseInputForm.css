@@ -19,3 +19,37 @@ button {
   margin-left: 13px;
   font-size: 16px;
 }
+
+.nameHeader {
+  float: left;
+  width: 40%;
+  height: 30px;
+  font-size: 23px;
+  text-align: center;
+}
+.costHeader {
+  float: left;
+  width: 30%;
+  height: 30px;
+  font-size: 23px;
+  text-align: center;
+}
+.rewardsHeader {
+  float: right;
+  width: 30%;
+  height: 30px;
+  font-size: 23px;
+  text-align: center;
+}
+
+.resultComp {
+  margin-top: 3px;
+}
+
+h1 {
+  text-align: center;
+}
+
+p {
+  font-size: 25px;
+}

@@ -9,12 +9,11 @@ export default class RewardForm extends Component{
         }
     }
     render() {
-        console.log("these are props in render", this.props);
         return (
              <div className="rewardForm">
-                 <p>{this.props.rewardInfo.purchaseName}</p>
-                 <p>{this.props.rewardInfo.purchaseCost}</p>
-                 <p>{this.props.rewardInfo.rewardPoints}</p>
+                 <div className = "nameHeader">{this.props.rewardInfo.purchaseName}</div>
+                 <div className = "costHeader">{this.props.rewardInfo.purchaseCost}</div>
+                 <div className = "rewardsHeader">{this.props.rewardInfo.rewardPoints}</div>
              </div>
         );
     }
